@@ -1,0 +1,202 @@
+# LLM Orchestrator 설정 파일
+
+# 서버 설정
+server:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false  # 개발 시 true, 프로덕션 시 false
+
+# LLM 설정
+llm:
+  # LLM 타입: "api" (API 키 필요), "vllm" (로컬 vLLM), "ollama" (로컬 Ollama)
+  # - "api": API 키가 필요한 클라우드 서비스 (OpenAI, Anthropic 등)
+  # - "vllm": 로컬 vLLM 서버
+  # - "ollama": 로컬 Ollama 서버
+  type: "vllm"  # "api", "vllm", "ollama"
+  
+  # 기본 모델 설정
+  default_model: "gpt-4"
+  
+  # API 키가 필요한 LLM 설정 (type이 "api"일 때 사용)
+  api:
+    enabled: false
+    models:
+      - name: "gpt-4"
+        provider: "openai"
+        api_key: "${OPENAI_API_KEY:}"
+        base_url: "https://api.openai.com/v1"
+        max_tokens: 1024
+        temperature: 0.7
+        top_p: 1.0
+      
+      - name: "gpt-3.5-turbo"
+        provider: "openai"
+        api_key: "${OPENAI_API_KEY:}"
+        base_url: "https://api.openai.com/v1"
+        max_tokens: 1024
+        temperature: 0.7
+        top_p: 1.0
+      
+      - name: "claude-3-opus"
+        provider: "anthropic"
+        api_key: "${ANTHROPIC_API_KEY:}"
+        base_url: "https://api.anthropic.com/v1"
+        max_tokens: 1024
+        temperature: 0.7
+        top_p: 1.0
+  
+  # vLLM 설정 (로컬 모델 사용 시, type이 "vllm"일 때 사용)
+  vllm:
+    enabled: true
+    models:
+      - name: "base_model" #qwen1.7b
+        base_url: "http://222.122.179.135:8133/v1"
+        # base_url: "https://crumbier-trilaterally-venita.ngrok-free.dev/v1"
+        model_name: "/model"  # "qwen1.7b"
+        # model_name: "naver-hyperclovax/HyperCLOVAX-SEED-Think-14B"
+        max_tokens: 1024
+        temperature: 0.6
+        top_p: 1.0
+        streaming: false  # 스트리밍 사용 여부
+        stop_strings:  # 중지 문자열 목록
+          - "<|im_end|>"
+          - "<|endofturn|>"
+          - "<|stop|>"
+          - "<|im_end|><|endofturn|>"
+          - "<|im_end|><|stop|>"
+        extra_body:  # 추가 요청 본문 설정
+          skip_special_tokens: false
+          chat_template_kwargs:
+            enable_thinking: false
+
+      - name: "ft_clova"
+        base_url: "https://crumbier-trilaterally-venita.ngrok-free.dev/v1"
+        model_name: "clova2"
+        max_tokens: 1024
+        temperature: 0.7
+        top_p: 1.0
+        streaming: false  # 스트리밍 사용 여부
+        stop_strings:  # 중지 문자열 목록
+          - "<|im_end|>"
+          - "<|endofturn|>"
+          - "<|stop|>"
+          - "<|im_end|><|endofturn|>"
+          - "<|im_end|><|stop|>"
+        extra_body:  # 추가 요청 본문 설정
+          skip_special_tokens: false
+          chat_template_kwargs:
+            enable_thinking: false
+  
+  # Ollama 설정 (로컬 Ollama 사용 시, type이 "ollama"일 때 사용)
+  ollama:
+    enabled: false
+    models:
+      - name: "llama2"
+        base_url: "http://localhost:11434"
+        model_name: "llama2"
+        max_tokens: 1024
+        temperature: 0.7
+        top_p: 1.0
+
+# 파이프라인 설정
+pipeline:
+  # 파이프라인 모드: "static" 또는 "dynamic"
+  mode: "static"
+  
+  # 정적 파이프라인 설정
+  static:
+    enabled: true
+    default_pipeline: "summarize_pipeline"
+    
+    # 파이프라인 정의
+    # - name: 파이프라인 이름
+    # - description: 파이프라인 설명
+    # - model: 모델 이름 
+    pipelines:
+      - name: "summarize_pipeline"
+        description: "요약 파이프라인"
+        model: "vllm:base_model"
+        extend_model: ["vllm:ft_clova", "api:gpt-3.5-turbo"]
+        # 상담원/고객 발언 분리 요약 설정
+        separate_speaker_summary:
+          enabled: true  # 분리 요약 활성화 여부
+          use_original_text: true # true면 원본 텍스트 그대로 사용, false면 발언 분리 후 사용
+          # 상담사 발언 요약용 시스템 프롬프트
+          agent_system_prompt: |
+            당신은 관세청 상담내용 요약 전문가입니다. 주어진 텍스트를 요약하세요.
+
+            규칙:
+            1. 텍스트에 명시된 사실만 요약 (추론, 해석, 의도 추측 절대 금지)
+            2. 텍스트에 없는 정보는 절대 추가하지 않음
+            3. 질문과 답변을 정확히 구분하고, 상대방에게 알려준 정보는 반드시 포함 (통관번호, 운송장번호, 전화번호, 주소, 금액, 세율, 날짜 등)
+            4. 대괄호 안의 내용은 그대로 사용하고, 추가 변환하거나 해석하지 마세요
+            5. 한글 숫자는 모두 아라비아 숫자로 변환하여 출력
+            6. 숫자+단위 조합은 반드시 하나의 토큰으로 인식하여 전체를 변환해야 합니다
+              - 사만 칠천 엔 → 47000엔 (사만=40000, 칠천=7000, 합계=47000)
+              - 십이만 삼천 원 → 123000원 (십이만=120000, 삼천=3000, 합계=123000)
+              - 오만 원 → 50000원
+              - 십이월 이십일 → 12월 20일 (날짜 변환), 삼사 주 후 → 3-4 주 후 (시간 변환)
+              - 숫자와 단위 사이에 공백이 있어도 하나의 토큰으로 인식하여 합산
+            7. 2~4문장으로 간결하게 작성
+
+            출력 형식:
+            ■ [상담사] 상담사 발언 요약
+            상담사는 문의한 ??에 대해 답변하고 관련 ??을 안내했습니다...
+          # 고객 발언 요약용 시스템 프롬프트
+          customer_system_prompt: |
+            당신은 관세청 상담내용 요약 전문가입니다. 주어진 텍스트를 요약하세요.
+
+            규칙:
+            1. 텍스트에 명시된 사실만 요약 (추론, 해석, 의도 추측 절대 금지)
+            2. 텍스트에 없는 정보는 절대 추가하지 않음
+            3. 질문과 답변을 정확히 구분하고, 상대방에게 알려준 정보는 반드시 포함 (통관번호, 운송장번호, 전화번호, 주소, 금액, 세율, 날짜 등)
+            4. 대괄호 안의 내용은 그대로 사용하고, 추가 변환하거나 해석하지 마세요
+            5. 한글 숫자는 모두 아라비아 숫자로 변환하여 출력
+            6. 숫자+단위 조합은 반드시 하나의 토큰으로 인식하여 전체를 변환해야 합니다
+              - 사만 칠천 엔 → 47000엔 (사만=40000, 칠천=7000, 합계=47000)
+              - 십이만 삼천 원 → 123000원 (십이만=120000, 삼천=3000, 합계=123000)
+              - 오만 원 → 50000원
+              - 십이월 이십일 → 12월 20일 (날짜 변환), 삼사 주 후 → 3-4 주 후 (시간 변환)
+              - 숫자와 단위 사이에 공백이 있어도 하나의 토큰으로 인식하여 합산
+            7. 2~4문장으로 간결하게 작성
+
+            출력 형식:
+            ■ [고객] 고객 발언 요약
+            고객은 ??에 대해 문의하고 ??에 대해 안내받았습니다...
+          # 상담사/고객 발언 식별 패턴 (정규식)
+          speaker_patterns:
+            agent: ["\\(상담사\\)", "\\(상담원\\)", "\\(에이전트\\)"]
+            customer: ["\\(고객\\)", "\\(고\\s+객\\)", "\\(클라이언트\\)"]
+          # 구분자 설정
+          separator: |
+            -----
+        
+      - name: "qa_pipeline"
+        description: "질의응답 파이프라인"
+        model: "api:gpt-3.5-turbo" 
+        extend_model: ["ollama:llama2"]
+
+  
+  # 동적 파이프라인 설정 (현재는 사용 안 함)
+  dynamic:
+    enabled: false
+    default_pipeline: "base_pipeline"
+    pipelines:
+      - name: "base_pipeline"
+        description: "기본 파이프라인"
+        model: "vllm:ft_clova"
+        extend_model: ["vllm:base_clova", "api:gpt-3.5-turbo"]
+      - name: "qa_pipeline"
+        description: "부가기능 추가 파이프라인"
+        model: "api:gpt-3.5-turbo" 
+        extend_model: ["ollama:llama2"]
+
+# 로깅 설정
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  folder: "logs"  # 로깅 폴더 경로
+  file: "logs/orchestrator.log"  # 로그 파일 경로
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+

@@ -1,0 +1,66 @@
+spring:
+  application:
+    name: SpringGateway
+  cloud:
+    gateway:
+      httpclient:
+        response-timeout: 300000
+
+server:
+  port: 29080
+
+# 상세 로깅 설정
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# JWT 설정
+jwt:
+  secret: sjgljspoijugi30chgv9hqwub9vc98b93b9scvb92security
+  expiration: 86400000  # 24시간(밀리초)
+  header: Authorization
+  prefix: "Bearer "
+
+# Gateway 라우팅 설정
+gateway:
+  routes:
+    summary:
+      uri: http://localhost:28083
+      path: /summary/stt/**
+      prod-uri: http://summary-custom-container:28083
+    route1:
+      enabled: false
+      id: customRoute1
+      uri: http://localhost:8081
+      path: /api/v1/**
+      prod-uri: http://service1-container:8081
+    route2:
+      enabled: false
+      id: customRoute2
+      uri: http://localhost:8082
+      path: /api/v2/**
+      prod-uri: http://service2-container:8082
+    route3:
+      enabled: false
+      id: customRoute3
+      uri: http://localhost:8083
+      path: /api/v3/**
+      prod-uri: http://service3-container:8083
+    route4:
+      enabled: false
+      id: customRoute4
+      uri: http://localhost:8084
+      path: /api/v4/**
+      prod-uri: http://service4-container:8084
+    route5:
+      enabled: false
+      id: customRoute5
+      uri: http://localhost:8085
+      path: /api/v5/**
+      prod-uri: http://service5-container:8085
+

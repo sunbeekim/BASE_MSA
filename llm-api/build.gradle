@@ -1,0 +1,80 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.7'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example.summary'
+version = '0.0.1-SNAPSHOT'
+description = 'LLM 로직 호출용 공통 서비스'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Web (일반 REST API 서비스)
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	// Apache HttpClient 5 (연결 풀 지원)
+	// Spring Boot 3.5.7과 호환되는 버전 사용
+	implementation('org.apache.httpcomponents.client5:httpclient5') {
+		version {
+			strictly '5.3.1'
+		}
+	}
+	implementation('org.apache.httpcomponents.core5:httpcore5') {
+		version {
+			strictly '5.2.2'
+		}
+	}
+	implementation('org.apache.httpcomponents.core5:httpcore5-h2') {
+		version {
+			strictly '5.2.2'
+		}
+	}
+	
+	// Spring Data JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	// PostgreSQL Driver
+	runtimeOnly 'org.postgresql:postgresql'
+	
+	// Flyway (Database Migration)
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.flywaydb:flyway-database-postgresql'
+	
+	// Validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	// Test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+// JAR 빌드 설정
+jar {
+	enabled = false
+	archiveClassifier = ''
+}
+
+bootJar {
+	enabled = true
+	archiveBaseName = 'llm-api'
+	archiveVersion = '0.0.1-SNAPSHOT'
+	archiveClassifier = ''
+}

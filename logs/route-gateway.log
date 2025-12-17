@@ -1,0 +1,426 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.2)
+
+2025-12-14 10:42:38 [main] INFO  com.example.demo.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.11 with PID 103513 (/sw/qubientai/route-gateway-0.0.1-SNAPSHOT.jar started by qubientai in /sw/qubientai)
+2025-12-14 10:42:38 [main] INFO  com.example.demo.Application - No active profile set, falling back to 1 default profile: "default"
+2025-12-14 10:42:38 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=98c0c916-10f2-3186-bc5f-aca7e551a8da
+2025-12-14 10:42:39 [main] DEBUG reactor.netty.tcp.TcpResources - [http] resources will use the default LoopResources: DefaultLoopResources {prefix=reactor-http, daemon=true, selectCount=4, workerCount=4}
+2025-12-14 10:42:39 [main] DEBUG reactor.netty.tcp.TcpResources - [http] resources will use the default ConnectionProvider: reactor.netty.resources.DefaultPooledConnectionProvider@45e1aa48
+=== RouteConfig 초기화 ===
+현재 활성화된 프로필: local
+인증 서비스 URI: http://localhost:28089
+관세청 요약 서비스 URI: http://localhost:28083
+관세청 요약 서비스 Path: /summary/stt/**
+WebSocket URI: ws://localhost:8087
+2025-12-14 10:42:39 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6a25b4f2-4592-45ff-9c89-9d97c1e2c9f5
+
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-12-14 10:42:39 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-14 10:42:39 [main] DEBUG o.s.w.r.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-14 10:42:39 [main] DEBUG o.s.w.r.r.m.a.ControllerMethodResolver - ControllerAdvice beans: none
+2025-12-14 10:42:39 [main] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-14 10:42:39 [main] DEBUG r.netty.resources.DefaultLoopIOUring - Default io_uring support : false
+2025-12-14 10:42:39 [main] DEBUG r.netty.resources.DefaultLoopEpoll - Default Epoll support : true
+2025-12-14 10:42:39 [reactor-http-epoll-1] DEBUG r.netty.transport.ServerTransport - [a26837d0, L:/[0:0:0:0:0:0:0:0%0]:29080] Bound new server
+2025-12-14 10:42:39 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 29080
+2025-12-14 10:42:39 [main] INFO  com.example.demo.Application - Started Application in 2.418 seconds (process running for 3.05)
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.n.http.server.HttpServerOperations - [886355fc, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] New http connection, requesting read
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.netty.transport.TransportConfig - [886355fc, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Initialized pipeline DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.n.http.server.HttpServerOperations - [886355fc, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Increasing pending responses, now 1
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.netty.http.server.HttpServer - [886355fc-1, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [886355fc-1] HTTP GET "/"
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG reactor.netty.ReactorNetty - [886355fc-1, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'GET /' doesn't match 'POST /logout'
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/'; against '/**'
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.w.r.h.SimpleUrlHandlerMapping - [886355fc-1] Mapped to ResourceWebHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/]]
+2025-12-14 10:42:40 [parallel-1] DEBUG o.s.w.r.resource.ResourceWebHandler - [886355fc-1] Resource not found
+2025-12-14 10:42:40 [parallel-1] DEBUG org.springframework.web.HttpLogging - [886355fc-1] Resolved [NoResourceFoundException: 404 NOT_FOUND "No static resource ."] for HTTP GET /
+2025-12-14 10:42:40 [parallel-1] DEBUG org.springframework.web.HttpLogging - [886355fc-1] Encoding [{timestamp=Sun Dec 14 10:42:40 EST 2025, path=/, status=404, error=Not Found, requestId=886355fc-1}]
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.n.http.server.HttpServerOperations - [886355fc-1, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Decreasing pending responses, now 0
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [886355fc-1] Completed 404 NOT_FOUND
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.n.http.server.HttpServerOperations - [886355fc-1, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Last HTTP response frame
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.netty.channel.ChannelOperations - [886355fc-1, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:42:40 [reactor-http-epoll-2] DEBUG r.n.http.server.HttpServerOperations - [886355fc-1, L:/[0:0:0:0:0:0:0:1%0]:29080 - R:/[0:0:0:0:0:0:0:1%0]:50542] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] New http connection, requesting read
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.netty.transport.TransportConfig - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Initialized pipeline DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-1, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-2] HTTP OPTIONS "/summary/stt/process"
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-2] Completed 200 OK
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-1, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-1, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] No sendHeaders() called before complete, sending zero-length header
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-1, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-1, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-1, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.channel.ChannelOperationsHandler - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] No ChannelOperation attached.
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-3] HTTP POST "/summary/stt/process"
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-3] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:56:40 [parallel-2] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:56:40.201] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:56:40 [parallel-2] DEBUG r.n.r.PooledConnectionProvider - Creating a new [proxy] client pool [PoolFactory{evictionInterval=PT0S, leasingStrategy=fifo, maxConnections=2147483647, maxIdleTime=-1, maxLifeTime=-1, metricsEnabled=false, pendingAcquireMaxCount=-1, pendingAcquireTimeout=0}] for [localhost/<unresolved>:28083]
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f] Created a new pooled channel, now: 0 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.netty.transport.TransportConfig - [19d9147f] Initialized pipeline DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpClientCodec), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.netty.transport.TransportConnector - [19d9147f] Connecting to [localhost/127.0.0.1:28083].
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Registering pool release on close event for channel
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel connected, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}, [connected])
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(GET{uri=null, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [configured])
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=false, cancelled=false, pending=1, error=null]: subscribing inbound receiver
+2025-12-14 10:56:40 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:56:40 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-1, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:56:47 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:56:47.487] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:56:47 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-3] Completed 200 OK
+2025-12-14 10:56:47 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:56:47 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:56:47 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:56:47 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-2, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:56:56 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:56:56 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:56:56 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-4] HTTP POST "/summary/stt/process"
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-4] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:56:56 [parallel-1] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:56:56.985] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:56:56 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel acquired, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:56:56 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:56:56 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:56:56 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:56:56 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:56:56 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-2, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:57:01 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:57:01.272] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:57:01 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-4] Completed 200 OK
+2025-12-14 10:57:01 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:57:01 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:57:01 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:57:01 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-3, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:57:14 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:57:14 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:57:14 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-5] HTTP POST "/summary/stt/process"
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-5] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:57:14 [parallel-2] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:57:14.485] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:57:14 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel acquired, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:57:14 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:57:14 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:57:14 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=false, cancelled=false, pending=1, error=null]: subscribing inbound receiver
+2025-12-14 10:57:14 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:57:14 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-3, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:57:18 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:57:18.072] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:57:18 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-5] Completed 200 OK
+2025-12-14 10:57:18 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:57:18 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:57:18 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:57:18 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-4, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:57:33 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:57:33 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:57:33 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-6] HTTP POST "/summary/stt/process"
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-6] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:57:33 [parallel-1] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:57:33.894] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:57:33 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel acquired, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:57:33 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:57:33 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:57:33 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:57:33 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:57:33 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-4, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:57:36 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:57:36.820] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:57:36 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-6] Completed 200 OK
+2025-12-14 10:57:36 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:57:36 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:57:36 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:57:36 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-5, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:57:52 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:57:52 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:57:52 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-7] HTTP POST "/summary/stt/process"
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-7] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:57:52 [parallel-2] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:57:52.006] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:57:52 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel acquired, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:57:52 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:57:52 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:57:52 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=false, cancelled=false, pending=1, error=null]: subscribing inbound receiver
+2025-12-14 10:57:52 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:57:52 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-5, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:57:55 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:57:55.472] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:57:55 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-7] Completed 200 OK
+2025-12-14 10:57:55 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:57:55 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:57:55 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:57:55 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-6, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:58:13 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:58:13 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:58:13 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-8] HTTP POST "/summary/stt/process"
+2025-12-14 10:58:13 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-8] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:58:13 [parallel-1] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:58:13.623] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:58:13 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel acquired, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:58:13 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:58:13 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:58:13 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=true, cancelled=false, pending=1, error=null]: subscribing inbound receiver
+2025-12-14 10:58:13 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-6, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:58:16 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:58:16.069] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:58:16 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-8] Completed 200 OK
+2025-12-14 10:58:16 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:58:16 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:58:16 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:58:16 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-7, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:58:28 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Increasing pending responses, now 1
+2025-12-14 10:58:28 [reactor-http-epoll-3] DEBUG r.netty.http.server.HttpServer - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3bb2cd0c
+2025-12-14 10:58:28 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-9] HTTP POST "/summary/stt/process"
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.w.s.s.DefaultWebSessionManager - Created new WebSession.
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/logout', method=POST}
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Request 'POST /summary/stt/process' doesn't match 'POST /logout'
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - No matches found
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/**', method=null}
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.u.m.PathPatternParserServerWebExchangeMatcher - Checking match of request : '/summary/stt/process'; against '/**'
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.u.m.OrServerWebExchangeMatcher - matched
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.a.DelegatingReactiveAuthorizationManager - Checking authorization on '/summary/stt/process' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda$615/0x00007f556c458000@7b7b9b21
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.s.w.s.a.AuthorizationWebFilter - Authorization successful
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Route matched: summaryCustomService
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - Mapping [Exchange: POST http://192.168.0.134:29080/summary/stt/process] to Route{id='summaryCustomService', uri=http://localhost:28083, order=0, predicate=Paths: [/summary/stt/**], match trailing slash: true, gatewayFilters=[], metadata={}}
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.c.g.h.RoutePredicateHandlerMapping - [a37bad3e-9] Mapped to org.springframework.cloud.gateway.handler.FilteringWebHandler@2ae5f2f2
+2025-12-14 10:58:28 [parallel-2] DEBUG o.s.c.g.handler.FilteringWebHandler - Sorted gatewayFilterFactories: [[GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RemoveCachedBodyFilter@3e046e39}, order = -2147483648], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.AdaptCachedBodyGlobalFilter@131a7516}, order = -2147482648], [GatewayFilterAdapter{delegate=com.example.demo.filter.LoggingGlobalFilter@4e22368c}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyWriteResponseFilter@3c770db4}, order = -1], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardPathFilter@4262fdeb}, order = 0], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter@61cda923}, order = 10000], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.config.GatewayNoLoadBalancerClientAutoConfiguration$NoLoadBalancerClientFilter@5382184b}, order = 10150], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.WebsocketRoutingFilter@5f0a2638}, order = 2147483646], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.NettyRoutingFilter@411cd156}, order = 2147483647], [GatewayFilterAdapter{delegate=org.springframework.cloud.gateway.filter.ForwardRoutingFilter@46fc522d}, order = 2147483647]]
+================================================================================
+[2025-12-14 10:58:28.726] [REQUEST] POST /summary/stt/process
+  Remote Address: 10.212.134.200
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+  Content-Type: application/json; charset=UTF-8
+================================================================================
+2025-12-14 10:58:28 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel acquired, now: 1 active connections, 0 inactive connections and 0 pending acquire requests.
+2025-12-14 10:58:28 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientConnect - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Handler is being applied: {uri=http://localhost:28083/summary/stt/process, method=POST}
+2025-12-14 10:58:28 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_prepared])
+2025-12-14 10:58:28 [reactor-http-epoll-3] DEBUG reactor.netty.channel.FluxReceive - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [terminated=false, cancelled=false, pending=1, error=null]: subscribing inbound receiver
+2025-12-14 10:58:28 [reactor-http-epoll-3] DEBUG reactor.netty.ReactorNetty - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Non Removed handler: reactor.left.readTimeoutHandler, context: null, pipeline: DefaultChannelPipeline{(reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2025-12-14 10:58:28 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [request_sent])
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received response (auto-read:false) : RESPONSE(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 
+Content-Type: <filtered>
+Transfer-Encoding: <filtered>
+Date: <filtered>
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_received])
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG reactor.netty.channel.FluxReceive - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] [terminated=false, cancelled=false, pending=0, error=null]: subscribing inbound receiver
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.http.client.HttpClientOperations - [19d9147f-7, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Received last HTTP packet
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [response_completed])
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] onStateChange(POST{uri=/summary/stt/process, connection=PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083]}}, [disconnecting])
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Releasing channel
+2025-12-14 10:58:32 [reactor-http-epoll-1] DEBUG r.n.r.PooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 - R:localhost/127.0.0.1:28083] Channel cleaned, now: 0 active connections, 1 inactive connections and 0 pending acquire requests.
+================================================================================
+[2025-12-14 10:58:32.114] [RESPONSE] POST /summary/stt/process - Status: 200
+================================================================================
+2025-12-14 10:58:32 [reactor-http-epoll-3] DEBUG o.s.w.s.a.HttpWebHandlerAdapter - [a37bad3e-9] Completed 200 OK
+2025-12-14 10:58:32 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP response frame
+2025-12-14 10:58:32 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Decreasing pending responses, now 0
+2025-12-14 10:58:32 [reactor-http-epoll-3] DEBUG r.n.http.server.HttpServerOperations - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] Last HTTP packet was sent, terminating the channel
+2025-12-14 10:58:32 [reactor-http-epoll-3] DEBUG r.netty.channel.ChannelOperations - [a37bad3e-8, L:/192.168.0.134:29080 - R:/10.212.134.200:55398] [HttpServer] Channel inbound receiver cancelled (subscription disposed).
+2025-12-14 10:59:32 [reactor-http-epoll-1] DEBUG r.n.r.DefaultPooledConnectionProvider - [19d9147f, L:/127.0.0.1:55802 ! R:localhost/127.0.0.1:28083] onStateChange(PooledConnection{channel=[id: 0x19d9147f, L:/127.0.0.1:55802 ! R:localhost/127.0.0.1:28083]}, [disconnecting])

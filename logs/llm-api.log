@@ -1,0 +1,211 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2025-12-14 10:42:33 [main] INFO  c.example.llm.LLMServiceApplication - Starting LLMServiceApplication v0.0.1-SNAPSHOT using Java 17.0.11 with PID 103408 (/sw/qubientai/llm-api-0.0.1-SNAPSHOT.jar started by qubientai in /sw/qubientai)
+2025-12-14 10:42:33 [main] INFO  c.example.llm.LLMServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-14 10:42:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-14 10:42:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2025-12-14 10:42:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 28083 (http)
+2025-12-14 10:42:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-14 10:42:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-14 10:42:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-14 10:42:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1141 ms
+2025-12-14 10:42:34 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-14 10:42:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-14 10:42:34 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-14 10:42:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-14 10:42:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-14 10:42:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64f3ca6
+2025-12-14 10:42:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-14 10:42:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-14 10:42:35 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 14.20
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-14 10:42:35 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-14 10:42:35 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-14 10:42:36 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-14 10:42:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 28083 (http) with context path '/'
+2025-12-14 10:42:36 [main] INFO  c.example.llm.LLMServiceApplication - Started LLMServiceApplication in 3.785 seconds (process running for 4.121)
+2025-12-14 10:42:36 [http-nio-28083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-14 10:42:36 [http-nio-28083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-14 10:42:36 [http-nio-28083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-14 10:56:40 [http-nio-28083-exec-3] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:56:40 [http-nio-28083-exec-3] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
+2025-12-14 10:56:56 [http-nio-28083-exec-4] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:56:56 [http-nio-28083-exec-4] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
+2025-12-14 10:57:14 [http-nio-28083-exec-5] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:57:14 [http-nio-28083-exec-5] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
+2025-12-14 10:57:33 [http-nio-28083-exec-6] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:57:33 [http-nio-28083-exec-6] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
+2025-12-14 10:57:52 [http-nio-28083-exec-7] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:57:52 [http-nio-28083-exec-7] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
+2025-12-14 10:58:13 [http-nio-28083-exec-8] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:58:13 [http-nio-28083-exec-8] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
+2025-12-14 10:58:28 [http-nio-28083-exec-9] INFO  c.e.l.s.controller.SummaryController - LLM 처리 요청 수신: callkey=test-1765720951694
+2025-12-14 10:58:28 [http-nio-28083-exec-9] INFO  c.e.l.summary.service.SummaryService - LLM 처리 시작: callkey=test-1765720951694
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.callkey,
+        s1_0.created_at,
+        s1_0.original_text,
+        s1_0.summarized_text,
+        s1_0.updated_at 
+    from
+        context_summary s1_0 
+    where
+        s1_0.callkey=?
+Hibernate: 
+    update
+        context_summary 
+    set
+        callkey=?,
+        original_text=?,
+        summarized_text=?,
+        updated_at=? 
+    where
+        id=?
